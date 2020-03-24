@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BF000609"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/almarai_bold"
+            android:textSize="16sp"
+            android:layout_gravity=""
+            android:textColor="#fff"
+            android:layout_marginBottom="10dp"
+            android:text="مدينة العالية"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:fontFamily="@font/almarai"
+            android:layout_marginBottom="20dp"
+            android:text="أطلب الخدمة إلى مستحقها و أحنا نجيبوهالك"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:fontFamily="@font/almarai_bold"
+            android:layout_marginBottom="40dp"
+            android:text="#CHED_DAREK"/>
+
+        <Button
+            android:id="@+id/btnNewService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2196F3"
+            android:fontFamily="@font/almarai"
+            android:text="أطلب خدمة جديدة"
+            android:textColor="#fff"
+            android:textFontWeight="900"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btnMyServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:fontFamily="@font/almarai"
+            android:text="جميع طلباتي"
+            android:textColor="#2196F3"
+            android:textFontWeight="900"
+            android:textSize="22sp"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

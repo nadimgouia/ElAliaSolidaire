@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "536348405343",
+    "firebase_url": "https://elaliasolidare.firebaseio.com",
+    "project_id": "elaliasolidare",
+    "storage_bucket": "elaliasolidare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536348405343:android:e464b88014d1cb75a535ea",
+        "android_client_info": {
+          "package_name": "com.ndroid.elaliasolidaire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536348405343-3bb8bdd2pa7r5qmimu268evn7mss21nu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ndroid.elaliasolidaire",
+            "certificate_hash": "e183a518406c8ebebf5650b48b05b94643709517"
+          }
+        },
+        {
+          "client_id": "536348405343-7ftf43k80mihkmho1j869angbsbi6ju2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ45tAK2SvFAa77X2Asp_WQIevX0qOUwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536348405343-7ftf43k80mihkmho1j869angbsbi6ju2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
