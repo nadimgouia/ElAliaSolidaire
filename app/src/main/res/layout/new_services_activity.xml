@@ -55,6 +55,7 @@
                 android:layout_height="45dp"
                 android:background="@drawable/edit_text_border"
                 android:hint=""
+                android:inputType="number"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
 

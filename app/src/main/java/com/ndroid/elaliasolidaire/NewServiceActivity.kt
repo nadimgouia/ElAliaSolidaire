@@ -58,8 +58,12 @@ class NewServiceActivity : AppCompatActivity() {
 
         btnSave.setOnClickListener {
             if (servicesContent == "" || editName.text.toString().trim() == "" || editAdresse.text.toString().trim() == "" || editTel.text.toString().trim() == "") {
-                Toast.makeText(this, "يرجو منكم ملء كل الخانات", Toast.LENGTH_LONG).show()
-            } else {
+                Toast.makeText(this, "يرجى منكم ملئ كل الخانات", Toast.LENGTH_LONG).show()
+            }
+            else if(editTel.text.toString().trim().length != 8) {
+                Toast.makeText(this, "يرجى منكم إدخال رقم هاتف من 8 أرقام", Toast.LENGTH_LONG).show()
+            }
+            else {
                 // Write a message to the database
                 val database = FirebaseDatabase.getInstance().reference.child(android_id).child("services")
                 val newService = database.push()
