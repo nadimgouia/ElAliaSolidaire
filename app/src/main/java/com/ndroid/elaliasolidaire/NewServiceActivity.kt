@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.provider.Settings
+import android.text.method.ScrollingMovementMethod
 import android.view.MenuItem
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
@@ -39,6 +40,7 @@ class NewServiceActivity : AppCompatActivity() {
         }
         print("android_id $android_id")
 
+        tvServicesList.setMovementMethod(ScrollingMovementMethod())
         var servicesContent = ""
         btnAddService.setOnClickListener {
             if (editService.text.toString() != "") {
