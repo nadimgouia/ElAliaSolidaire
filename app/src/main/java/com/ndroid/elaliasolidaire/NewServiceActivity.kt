@@ -43,8 +43,8 @@ class NewServiceActivity : AppCompatActivity() {
         tvServicesList.setMovementMethod(ScrollingMovementMethod())
         var servicesContent = ""
         btnAddService.setOnClickListener {
-            if (editService.text.toString() != "") {
-                val newService = editService.text.trim()
+            if (editService.text.toString().trim() != "") {
+                val newService = editService.text
                 servicesContent = if (servicesContent.equals(""))
                     "- $newService"
                 else
@@ -57,7 +57,7 @@ class NewServiceActivity : AppCompatActivity() {
         }
 
         btnSave.setOnClickListener {
-            if (servicesContent == "" || editName.text.toString() == "" || editAdresse.text.toString() == "" || editTel.text.toString() == "") {
+            if (servicesContent == "" || editName.text.toString().trim() == "" || editAdresse.text.toString().trim() == "" || editTel.text.toString().trim() == "") {
                 Toast.makeText(this, "يرجو منكم ملء كل الخانات", Toast.LENGTH_LONG).show()
             } else {
                 // Write a message to the database
