@@ -133,7 +133,8 @@
                     android:padding="6dp"
                     android:textDirection="rtl"
                     android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"/>
 
             </androidx.cardview.widget.CardView>
 
