@@ -40,6 +40,11 @@ class NewServiceActivity : AppCompatActivity() {
         }
         print("android_id $android_id")
 
+        //get data from shared pref
+        editName.setText(sharedPreferences.getString("username", "").toString())
+        editTel.setText(sharedPreferences.getString("tel", "").toString())
+        editAdresse.setText(sharedPreferences.getString("adresse", "").toString())
+
         tvServicesList.setMovementMethod(ScrollingMovementMethod())
         var servicesContent = ""
         btnAddService.setOnClickListener {
@@ -77,6 +82,13 @@ class NewServiceActivity : AppCompatActivity() {
                 val dateInString = date.toString("yyyy/MM/dd HH:mm:ss")
 
                 newService.child("dateDemande").setValue(dateInString)
+
+                //save data to shared pref
+                val editor =  sharedPreferences.edit()
+                editor.putString("username", editName.text.toString())
+                editor.putString("tel", editTel.text.toString())
+                editor.putString("adresse", editAdresse.text.toString())
+                editor.apply()
 
                 finish()
                 startActivity(Intent(this, MyServicesActivity::class.java))
