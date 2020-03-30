@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/edit_text_border"
-                android:hint=""
+                android:hint="الإسم واللقب"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
 
@@ -54,7 +54,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/edit_text_border"
-                android:hint=""
+                android:hint="99999999"
+                android:inputType="number"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
 
@@ -73,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/edit_text_border"
-                android:hint=""
+                android:hint="رقم المنزل ، النهج أو الشارع ، الحي ، المدينة"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
 
@@ -95,10 +96,11 @@
                     android:id="@+id/editService"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginBottom="14dp"
                     android:layout_toRightOf="@id/btnAddService"
                     android:background="@drawable/edit_text_border"
-                    android:hint=""
+                    android:hint="مثال : كيلو بطاطا"
                     android:paddingLeft="6dp"
                     android:paddingRight="6dp" />
 
@@ -117,7 +119,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardServices"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:padding="4dp"
                 app:cardElevation="2dp">
 
@@ -131,7 +133,8 @@
                     android:padding="6dp"
                     android:textDirection="rtl"
                     android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:scrollbars="vertical"/>
 
             </androidx.cardview.widget.CardView>
 

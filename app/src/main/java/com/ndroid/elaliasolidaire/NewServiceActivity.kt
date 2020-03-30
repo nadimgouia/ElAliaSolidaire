@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.provider.Settings
+import android.text.method.ScrollingMovementMethod
 import android.view.MenuItem
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
@@ -39,10 +40,16 @@ class NewServiceActivity : AppCompatActivity() {
         }
         print("android_id $android_id")
 
+        //get data from shared pref
+        editName.setText(sharedPreferences.getString("username", "").toString())
+        editTel.setText(sharedPreferences.getString("tel", "").toString())
+        editAdresse.setText(sharedPreferences.getString("adresse", "").toString())
+
+        tvServicesList.setMovementMethod(ScrollingMovementMethod())
         var servicesContent = ""
         btnAddService.setOnClickListener {
-            if (editService.text.toString() != "") {
-                val newService = editService.text.trim()
+            if (editService.text.toString().trim() != "") {
+                val newService = editService.text
                 servicesContent = if (servicesContent.equals(""))
                     "- $newService"
                 else
@@ -55,9 +62,13 @@ class NewServiceActivity : AppCompatActivity() {
         }
 
         btnSave.setOnClickListener {
-            if (servicesContent == "" || editName.text.toString() == "" || editAdresse.text.toString() == "" || editTel.text.toString() == "") {
-                Toast.makeText(this, "يرجو منكم ملء كل الخانات", Toast.LENGTH_LONG).show()
-            } else {
+            if (servicesContent == "" || editName.text.toString().trim() == "" || editAdresse.text.toString().trim() == "" || editTel.text.toString().trim() == "") {
+                Toast.makeText(this, "يرجى منكم ملئ كل الخانات", Toast.LENGTH_LONG).show()
+            }
+            else if(editTel.text.toString().trim().length != 8) {
+                Toast.makeText(this, "يرجى منكم إدخال رقم هاتف من 8 أرقام", Toast.LENGTH_LONG).show()
+            }
+            else {
                 // Write a message to the database
                 val database = FirebaseDatabase.getInstance().reference.child(android_id).child("services")
                 val newService = database.push()
@@ -71,6 +82,13 @@ class NewServiceActivity : AppCompatActivity() {
                 val dateInString = date.toString("yyyy/MM/dd HH:mm:ss")
 
                 newService.child("dateDemande").setValue(dateInString)
+
+                //save data to shared pref
+                val editor =  sharedPreferences.edit()
+                editor.putString("username", editName.text.toString())
+                editor.putString("tel", editTel.text.toString())
+                editor.putString("adresse", editAdresse.text.toString())
+                editor.apply()
 
                 finish()
                 startActivity(Intent(this, MyServicesActivity::class.java))
